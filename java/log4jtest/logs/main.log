@@ -1,0 +1,9 @@
+2017-06-29 13:11:08,006 +0530 [main] WARN  (simple.java:18) - My Warn Log
+2017-06-29 13:11:08,019 +0530 [main] ERROR (simple.java:19) - My error log
+2017-06-29 13:11:08,019 +0530 [main] FATAL (simple.java:20) - My fatal log
+2017-06-29 13:11:34,783 +0530 [main] WARN  (simple.java:18) - My Warn Log
+2017-06-29 13:11:34,785 +0530 [main] ERROR (simple.java:19) - My error log
+2017-06-29 13:11:34,785 +0530 [main] FATAL (simple.java:20) - My fatal log
+2017-06-29 13:14:36,296 +0530 [main] WARN  (simple.java:18) - My Warn Log
+2017-06-29 13:14:36,298 +0530 [main] ERROR (simple.java:19) - My error log
+2017-06-29 13:14:36,298 +0530 [main] FATAL (simple.java:20) - My fatal log
