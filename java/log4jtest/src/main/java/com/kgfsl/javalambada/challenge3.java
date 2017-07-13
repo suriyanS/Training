@@ -1,15 +1,16 @@
-package com.kgfsl.javalambada;
+
+//package com.kgfsl.javalambada;
 
 import java.util.*;
 import java.util.Arrays;
-//import java.util.function.Consumer;
+import java.util.function.Consumer;
 
 class challenge3 {
 
     public static void main(String[] args) {
         List<String> disneyCharacters = Arrays.asList("Micky", "Donald", "Minnie", "Aurora", "Winnie", "Pluto");
 
-        /*Consumer<String> con = new Consumer<String>() {
+        /* Consumer<String> con = new Consumer<String>() {
          public void accept(String s) {
          System.out.println(s);
          }
@@ -21,7 +22,7 @@ class challenge3 {
 
         // call by method
         disneyCharacters.forEach(System.out::println);
-       /* for(String s:disneyCharacters)
+        /* for(String s:disneyCharacters)
         {
             System.out.println(s);
         }*/
