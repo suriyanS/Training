@@ -1,5 +1,10 @@
 <html>
-<body>
-<h2>Hello World!</h2>
-</body>
+   <body>
+      <form action = "Sample" method = "POST">
+         First Name: <input type = "text" name = "first_name">
+         <br />
+         Last Name: <input type = "text" name = "last_name" />
+         <input type = "submit" value = "Submit" />
+      </form>
+   </body>
 </html>
