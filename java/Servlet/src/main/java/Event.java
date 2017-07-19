@@ -1,7 +1,8 @@
 import java.io.*;  
 import java.sql.*;  
 import java.sql.Connection;
-import javax.servlet.ServletException;  
+import javax.servlet.ServletException;
+ 
 import javax.servlet.http.*;  
   
 public class Event extends HttpServlet {  
@@ -38,7 +39,7 @@ ps.setString(7,h);
 int i=ps.executeUpdate();  
 if(i>0)  
 out.print("You are successfully Completed the Event Registration...");  
-      
+      response.sendRedirect("eventregister.html");
           
 }catch (Exception e2) {System.out.println(e2);}  
           
