@@ -34,16 +34,24 @@
 	</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+
+<script>
+function onload()
+{
+document.getElementById('if').src="http://localhost:9090/mainservlet";
+}
+</script>
+
 </head>
 
-<body>
+<body onload='onload();'>
 	<div class='container-fluid'>
 		<br/>
 		<div class='well'>Event Registration</div>
 		<br/>
 
 		<div class='jumbotron'>
-			<form action='Event' class='form-inline' method='post'>
+			<form action='mainservlet' class='form-inline' method='post'>
 				<div class='row'>
 
 					<div class='col-sm-4'>
@@ -70,55 +78,22 @@
 					<br/><br/>
 
 					<div class='span12'>
-						<button  class='btn btn-primary' type='submit'>Register <span class='glyphicon glyphicon-save'></span></button>
+						<button  name="Register" class='btn btn-primary' type='submit'>Register <span class='glyphicon glyphicon-save'></span></button>
 
 						<button  class='btn btn-danger' type='reset'>Cancel <span class='glyphicon glyphicon-remove'></span></button>
-
+						<button name="Update"class='btn btn-primary'>Update <span class='glyphicon glyphicon-pencil'></span></button>
+							<button name="Delete"class='btn btn-danger'>Delete <span class='	glyphicon glyphicon-trash'></span></button>
 					</div>
 				</div>
 			</form>
 		</div>
 
 
+<iframe name='if' id="if">
 
-		<div>
-			<table class='table table-bordered '>
-			
-				<thead>
-					<tr>
-						<th>First Name</th>
-						<th>Last Name</th>
-						<th>Email id</th>
-						<th>Date</th>
-						<th>Time</th>
-						<th>Topic</th>
-						<th>Location</th>
-						<th>Action</th>
-					</tr>
-				</thead>
-				
-				<tbody>
-				<c:forEach items="${data}" var="val">
-					<tr class='danger'>
-							
-						<td><c:out value = "${val}"/></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
+</iframe>
 
-						<td>
-							<button class='btn btn-primary'>Edit <span class='glyphicon glyphicon-pencil'></span></button>
-							<button class='btn btn-danger'>Delete <span class='	glyphicon glyphicon-trash'></span></button>
-						</td>
-					</tr>
-				</c:forEach>
-				</tbody>
-				
-			</table>
-		</div>
+		
 
 	</div>
 
