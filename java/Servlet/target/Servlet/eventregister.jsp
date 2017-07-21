@@ -1,4 +1,5 @@
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!Doctype html>
 <html>
 
@@ -32,14 +33,7 @@
 		}
 	</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-    $("#btn1").click(function(){
-        alert("Registration Succesful");
-    });
-    
-});
-</script>
+
 </head>
 
 <body>
@@ -76,7 +70,7 @@ $(document).ready(function(){
 					<br/><br/>
 
 					<div class='span12'>
-						<button id="btn1" class='btn btn-primary' type='submit'>Register <span class='glyphicon glyphicon-save'></span></button>
+						<button  class='btn btn-primary' type='submit'>Register <span class='glyphicon glyphicon-save'></span></button>
 
 						<button  class='btn btn-danger' type='reset'>Cancel <span class='glyphicon glyphicon-remove'></span></button>
 
@@ -89,6 +83,7 @@ $(document).ready(function(){
 
 		<div>
 			<table class='table table-bordered '>
+			
 				<thead>
 					<tr>
 						<th>First Name</th>
@@ -101,26 +96,27 @@ $(document).ready(function(){
 						<th>Action</th>
 					</tr>
 				</thead>
+				
 				<tbody>
-
+				<c:forEach items="${data}" var="val">
 					<tr class='danger'>
-						<td><%String val=(String)request.getAttribute("fname");
-						out.println(val);
-						%></td>
-						<td>one</td>
-						<td>one</td>
-						<td>one</td>
-						<td>one</td>
-						<td>one</td>
-						<td>one</td>
+							
+						<td><c:out value = ${val}/></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
 
 						<td>
-							<button class='btn btn-primary'>Update <span class='glyphicon glyphicon-cloud-upload'></span></button>
+							<button class='btn btn-primary'>Edit <span class='glyphicon glyphicon-pencil'></span></button>
 							<button class='btn btn-danger'>Delete <span class='	glyphicon glyphicon-trash'></span></button>
 						</td>
 					</tr>
-
+				</c:forEach>
 				</tbody>
+				
 			</table>
 		</div>
 

@@ -1,11 +1,13 @@
 import java.io.*;
+import java.util.*;
 import java.sql.*;
 import java.sql.Connection;
 import javax.servlet.ServletException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.*;class Data extends HttpServlet
 {
-    String fname,lname,email,date,time,topic,location;
+   // String fname,lname,email,date,time,topic,location;
+    List<String> datalist=new ArrayList<String>();
  public void doGet(HttpServletRequest request, HttpServletResponse response)
                   throws ServletException, IOException {
 
@@ -19,17 +21,20 @@ import javax.servlet.http.*;class Data extends HttpServlet
                 ResultSet r=st.executeQuery("select * from eventform");
                 while(r.next())
                 {
-                     fname=r.getString(1);
-                     lname=r.getString(2);
-                     email=r.getString(3);
-                     date=r.getString(4);
-                     time=r.getString(5);
-                     topic=r.getString(6);
-                     location=r.getString(7);
+                     datalist.add(r.getString("firstname"));
+                     datalist.add(r.getString("lastname"));
+                      datalist.add(r.getString("email"));
+                       datalist.add(r.getString("date"));
+                        datalist.add(r.getString("time"));
+                         datalist.add(r.getString("topic"));
+                          datalist.add(r.getString("location"));
                 }
-                
+                r.close();
+                st.close();
+
+                 request.setAttribute("data","datalist"); 
                 RequestDispatcher dispatcher = request.getRequestDispatcher("eventregister.jsp");
-                request.setAttribute("fname","vengat"); 
+               
                 dispatcher.forward( request, response );
          }
          catch(Exception ex)

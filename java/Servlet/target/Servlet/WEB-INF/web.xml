@@ -5,12 +5,12 @@
     <web-app>  
           <servlet>  
     <servlet-name>Register</servlet-name>  
-    <servlet-class>Event</servlet-class>  
+    <servlet-class>Data</servlet-class>  
     </servlet>  
       
     <servlet-mapping>  
     <servlet-name>Register</servlet-name>  
-    <url-pattern>/Event</url-pattern>  
+    <url-pattern>/Data</url-pattern>  
     </servlet-mapping>  
       
     <welcome-file-list>  

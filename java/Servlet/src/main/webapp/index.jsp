@@ -28,14 +28,14 @@ String url = "jdbc:mysql://localhost:3306/";
 String db = "test";
 String driver = "com.mysql.jdbc.Driver";
 String userName ="root";
-String password="root";
+String password="";
 
 int sumcount=0;
 Statement st;
 try{
 Class.forName(driver).newInstance();
 con = DriverManager.getConnection(url+db,userName,password);
-String query = "select * from employee";
+String query = "select * from eventform";
 st = con.createStatement();
 ResultSet rs = st.executeQuery(query);
 %>
