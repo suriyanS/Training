@@ -1,65 +1,34 @@
-<%@ page import="java.sql.*" %>
 <html>
 <head>
-<script language="javascript">
-function editRecord(id){
-    var f=document.form;
-    f.method="post";
-    f.action='edit.jsp?id='+id;
-    f.submit();
-}
-function deleteRecord(id){
-    var f=document.form;
-    f.method="post";
-    f.action='delete.jsp?id='+id;
-    f.submit();
+<script>
+function onload()
+{
+document.getElementById('if').src="http://localhost:9090/ViewServlet";
 }
 </script>
 </head>
-<body>
+<style>
+body {
+    background-image: url("http://www.isiqiri-multi-touch.com/wp-content/uploads/2011/09/animation2.jpg");
+    }
+</style>
+<body onload='onload();'>
+<h2>!    Welcome   !</h2>
+<pre>
+<form action="SaveServlet" method="post">
+Id       :<input type="text" name="id">      </br>
+Username :<input type="text" name="username"></br>
+Password :<input type="text" name="password"></br>
+<input type="submit" name="summit"></form></pre>
 
-<br><br>
-<form method="post" name="form">
-<table border="1">
-<tr><th>Name</th><th>Address</th><th>Contact No</th><th>Email</th></tr>
-<%
-Connection con = null;
-String url = "jdbc:mysql://localhost:3306/";
-String db = "test";
-String driver = "com.mysql.jdbc.Driver";
-String userName ="root";
-String password="";
+<br/>  
+<a href="ViewServlet">view LoginUser</a>  
+<iframe  name='if' id="if" height="300px" width="600px">
+ 
+</iframe>
 
-int sumcount=0;
-Statement st;
-try{
-Class.forName(driver).newInstance();
-con = DriverManager.getConnection(url+db,userName,password);
-String query = "select * from eventform";
-st = con.createStatement();
-ResultSet rs = st.executeQuery(query);
-%>
 
-<%
-while(rs.next()){
-%>
-<tr><td><%=rs.getString(2)%></td>
-<td><%=rs.getString(3)%></td>
-<td><%=rs.getString(4)%></td>
-<td><%=rs.getString(5)%></td>
-<td><input type="button" name="edit" value="Edit" style="background-color:#49743D;font-weight:bold;color:#ffffff;" onclick="editRecord(<%=rs.getString(1)%>);" ></td>
-<td><input type="button" name="delete" value="Delete" style="background-color:#ff0000;font-weight:bold;color:#ffffff;" onclick="deleteRecord(<%=rs.getString(1)%>);" ></td>
-</tr>
-<%
-}
-%>
-<%
-}
-catch(Exception e){
-e.printStackTrace();
-}
-%>
-</table>
-</form>
+
+
 </body>
 </html>

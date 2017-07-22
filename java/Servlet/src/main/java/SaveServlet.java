@@ -13,20 +13,27 @@ public class SaveServlet extends HttpServlet {
         response.setContentType("text/html");  
         PrintWriter out=response.getWriter();  
           
-   String id=request.getParameter("id");
-   String user=request.getParameter("username");
-   String pass=request.getParameter("password"); 
+        String firstname=request.getParameter("firstname");  
+        String lastname=request.getParameter("lastname");  
+        String email=request.getParameter("email");  
+        String date=request.getParameter("date"); 
+        String time=request.getParameter("time");  
+        String topic=request.getParameter("topic");  
+        String location=request.getParameter("location");   
           
-        Login l=new Login();  
-        l.setId(id); 
-        l.setUsername(user); 
-        l.setPassword(pass);  
-      
+       pojoEvent e=new pojoEvent();  
+        e.setFirstName(firstname);  
+        e.setLastName(lastname);  
+        e.setEmail(email);  
+        e.setDate(date);
+         e.setTime(time);  
+          e.setTopic(topic);  
+           e.setLocation(location);  
           
-        int status=LoginDao.save(l);  
+        int status=EventDao.save(e);  
         if(status>0){  
             out.print("<p>Record saved successfully!</p>");  
-            request.getRequestDispatcher("index.jsp").include(request, response);  
+            request.getRequestDispatcher("eventregister.jsp").include(request, response);  
         }else{  
             out.println("Sorry! unable to save record");  
         }  
@@ -34,4 +41,4 @@ public class SaveServlet extends HttpServlet {
         out.close();  
     }  
   
-}  
+} 

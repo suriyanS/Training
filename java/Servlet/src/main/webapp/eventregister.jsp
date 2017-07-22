@@ -1,5 +1,5 @@
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!Doctype html>
 <html>
 
@@ -38,7 +38,7 @@
 <script>
 function onload()
 {
-document.getElementById('if').src="http://localhost:9090/mainservlet";
+document.getElementById('if').src="http://localhost:9090/ViewServlet";
 }
 </script>
 
@@ -51,12 +51,12 @@ document.getElementById('if').src="http://localhost:9090/mainservlet";
 		<br/>
 
 		<div class='jumbotron'>
-			<form action='mainservlet' class='form-inline' method='post'>
+			<form action='SaveServlet' class='form-inline' method='post'>
 				<div class='row'>
 
 					<div class='col-sm-4'>
-						<label>First Name:</label> <input type='text' required placeholder='First Name'' name='firstname'/><br/><br/>  
-    <label>Last Name:</label> <input type='text'  placeholder='Initial' ' name='lastname' /><br/><br/>
+						<label>First Name:</label> <input type='text' required placeholder='First Name' name='firstname'/><br/><br/>  
+    <label>Last Name:</label> <input type='text'  placeholder='Initial'  name='lastname' /><br/><br/>
 					</div>
 
 					<div class='col-sm-4'>
@@ -81,15 +81,14 @@ document.getElementById('if').src="http://localhost:9090/mainservlet";
 						<button  name="Register" class='btn btn-primary' type='submit'>Register <span class='glyphicon glyphicon-save'></span></button>
 
 						<button  class='btn btn-danger' type='reset'>Cancel <span class='glyphicon glyphicon-remove'></span></button>
-						<button name="Update"class='btn btn-primary'>Update <span class='glyphicon glyphicon-pencil'></span></button>
-							<button name="Delete"class='btn btn-danger'>Delete <span class='	glyphicon glyphicon-trash'></span></button>
+						
 					</div>
 				</div>
 			</form>
 		</div>
 
 
-<iframe name='if' id="if">
+<iframe name='if' id="if"  height="300px" width="1200px">
 
 </iframe>
 
