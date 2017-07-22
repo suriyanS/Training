@@ -7,6 +7,7 @@ LoginDao.class
 pojoEvent.class
 Register.class
 HelloForm.class
+pojoLogin.class
 SaveServlet$1.class
 Data.class
 EditServlet2.class

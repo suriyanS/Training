@@ -5,7 +5,7 @@ public class LoginDao {
             Connection con=null;  
             try{  
                 Class.forName("com.mysql.jdbc.Driver");  
-                con=DriverManager.getConnection("jdbc:mysql://localhost:3306/event_form", "root", "");  
+                con=DriverManager.getConnection("jdbc:mysql://localhost:3306/adminlogin", "root", "");  
             }catch(Exception e){System.out.println(e);}  
             return con;  
         }  
