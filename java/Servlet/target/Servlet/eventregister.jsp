@@ -51,7 +51,7 @@ document.getElementById('if').src="http://localhost:9090/ViewServlet";
 		<br/>
 
 		<div class='jumbotron'>
-			<form action='SaveServlet' class='form-inline' method='post'>
+			<form action='admin_SaveServlet' class='form-inline' method='post'>
 				<div class='row'>
 
 					<div class='col-sm-4'>
@@ -88,7 +88,7 @@ document.getElementById('if').src="http://localhost:9090/ViewServlet";
 		</div>
 
 
-<iframe name='if' id="if"  height="300px" width="1200px">
+<iframe name='if' id="if"  height="300px" width="1330px">
 
 </iframe>
 

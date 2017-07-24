@@ -15,8 +15,8 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-@WebServlet("/SaveServlet")  
-public class SaveServlet extends HttpServlet {  
+@WebServlet("/admin_SaveServlet")  
+public class admin_SaveServlet extends HttpServlet {  
     SaveServlet javaEmail=null;
     protected void doPost(HttpServletRequest request, HttpServletResponse response)   
          throws ServletException, IOException {  
@@ -43,7 +43,7 @@ public class SaveServlet extends HttpServlet {
         int status=EventDao.save(e);  
         if(status>0){  
             out.print("<p align=\"center\">Record saved successfully!</p>");  
-            request.getRequestDispatcher("WelcomeServlet").include(request, response);  
+            request.getRequestDispatcher("eventregister.jsp").include(request, response);  
         }else{  
             out.println("Sorry! unable to save record");  
         }  

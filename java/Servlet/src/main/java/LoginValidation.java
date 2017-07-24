@@ -21,9 +21,14 @@ import javax.servlet.http.HttpServlet;
         String u=request.getParameter("user"); 
         //if(u=="Admin") {    
         if(LoginDao.validateAdmin(n,p,u)){  
+            RequestDispatcher rd=request.getRequestDispatcher("eventregister.jsp");  
+            rd.forward(request,response);  
+        }  
+          if(LoginDao.validateUser(n,p)){  
             RequestDispatcher rd=request.getRequestDispatcher("WelcomeServlet");  
             rd.forward(request,response);  
         }  
+
         else{  
             out.print("Sorry username or password error");  
             RequestDispatcher rd=request.getRequestDispatcher("Login.jsp");  

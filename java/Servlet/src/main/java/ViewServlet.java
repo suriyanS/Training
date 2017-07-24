@@ -17,7 +17,8 @@
             out.println("<h1>Users List</h1>");  
               
             List<pojoEvent> list=EventDao.getAllUsers();  
-              
+              out.print("<html>" );
+              out.print("<head>               <meta name='viewport' content='width=device-width, initial-scale=1'>	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>	<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js'></script>	<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script></head>");
             out.print("<table border='2' width='100%'");  
             out.print("<tr><th>Id</th><th>FirstName</th><th>LastName</th><th>Email</th><th>Date</th><th>Time</th><th>Topic</th><th>Location</th><th>Edit</th><th>Delete</th></tr>");  
             for(pojoEvent e:list){  
